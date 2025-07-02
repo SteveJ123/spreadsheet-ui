@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useTable, useResizeColumns, useFlexLayout } from 'react-table';
 import type { Column } from 'react-table';
 import chevronDouble from "../src/assets/images/ChevronDouble.png"
@@ -160,8 +160,7 @@ const initialData: RowData[] = [
 export default function SpreadsheetTable() {
   const [data, setData] = useState<RowData[]>(initialData);
   const [activeTab, setActiveTab] = useState('All Orders');
-  const tabs = ['All Orders', 'Pending', 'Reviewed', 'Arrived'];
-  const TOTAL_ROWS = 15;
+  const tabs = ['All Orders', 'Pending', 'Reviewed', 'Arrived'];  
   
   const filteredData = useMemo(() => {
   if (activeTab === 'All Orders') return data;
@@ -363,8 +362,7 @@ const columns: Column<RowData>[] = useMemo(() => [
     prepareRow,
   } = useTable<RowData>({ columns, data:filteredData }, useFlexLayout,
   useResizeColumns);
-
-  const extraRows = Math.max(0, TOTAL_ROWS - rows.length);
+  
 
   return (
     <div className="px-2 overflow-x-auto">
@@ -479,7 +477,8 @@ const columns: Column<RowData>[] = useMemo(() => [
 
   {/* Plus Button */}
   <button
-  className="ml-auto w-6 h-6 flex items-center justify-center  border border-gray-300 text-gray-700 hover:bg-gray-100">
+  className="ml-auto w-6 h-6 flex items-center justify-center  border border-gray-300 text-gray-700 hover:bg-gray-100"
+  onClick={()=>console.log("clicked")}>
     <img src={shape14} className='w-[16px] h-[16px]' />
   </button>
 </div>
@@ -555,7 +554,7 @@ const columns: Column<RowData>[] = useMemo(() => [
       {tab}
     </button>
   ))}
-  <button className="ml-2 text-gray-500 hover:text-black text-xl font-bold">
+  <button className="ml-2 text-gray-500 hover:text-black text-xl font-bold" onClick={()=>console.log("clicked")}>
     <img src={shape14} className='w-[16px] h-[16px]' />
   </button>
 </div>
