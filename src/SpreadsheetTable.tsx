@@ -30,6 +30,7 @@ import more from "../src/assets/images/More.png"
 import search2 from "../src/assets/images/search2.png"
 import notification from "../src/assets/images/Notification_bell.png"
 import elipse from "../src/assets/images/Ellipse2.png"
+import arrowSplitExtract from "../src/assets/images/ArrowSplitExtract.png"
 
 
 
@@ -411,37 +412,45 @@ const columns: Column<RowData>[] = useMemo(() => [
  {/* Toolbar row */}
 <div className="flex items-center justify-between px-4 py-2 border-b border-gray-300 bg-white h-[48px]">
   <div className="flex items-center text-sm text-gray-700 w-[871px]">
-    <button className="flex items-center space-x-0 w-[91px] h-[36px] hover:text-black">
+    <button className="flex items-center space-x-0 w-[91px] h-[36px] hover:text-black" onClick={() => console.log('Toolbar clicked')}>
       <span>Tool bar</span>
       <span className="text-xs"><img src={chevronDouble} className='w-[16px] h-[16px]' /></span>
     </button>
-    <button className="flex items-center space-x-1 w-[119px] h-[36px] hover:text-black">
+    <button className="flex items-center space-x-1 w-[119px] h-[36px] hover:text-black" onClick={() => console.log('Hide fields clicked')}>
       <span><img src={shape} className='w-[16px] h-[16px]' /></span>
       <span>Hide fields</span>
     </button>
-    <button className="flex items-center space-x-1 w-[73px] h-[36px] hover:text-black">
+    <button className="flex items-center space-x-1 w-[73px] h-[36px] hover:text-black" onClick={() => console.log('Sort clicked')}>
       <span><img src={arrowSort} className='w-[16px] h-[16px]' /></span>
       <span>Sort</span>
     </button>
-    <button className="flex items-center space-x-1 w-[80px] h-[36px] hover:text-black">
+    <button className="flex items-center space-x-1 w-[80px] h-[36px] hover:text-black" onClick={() => console.log('Filter clicked')}>
       <span><img src={filter} className='w-[12px] h-[12px]' /></span>
       <span>Filter</span>
     </button>
-    <button className="flex items-center space-x-1 w-[104px] h-[36px] hover:text-black">
+    <button className="flex items-center space-x-1 w-[104px] h-[36px] hover:text-black" onClick={() => console.log('Cell view clicked')}>
       <span><img src={arrowOutfit} className='w-[16px] h-[16px]' /></span>
       <span>Cell view</span>
     </button>
   </div>
 
   <div className="flex items-center space-x-2">
-    <button className="flex items-center w-[87px] h-[36px] rounded-[6px]  border-gray-300 pt-2 pr-3 pb-2 pl-2 gap-1 text-sm hover:bg-gray-100">
+    <button
+    className="flex items-center w-[87px] h-[36px] rounded-[6px]  border-gray-300 pt-2 pr-3 pb-2 pl-2 gap-1 text-sm hover:bg-gray-100"
+    onClick={() => console.log('Import clicked')}>
         <span className="text-xs"><img src={shape2} className='w-[16px] h-[12px]' /></span>
         Import</button>
-    <button className="flex items-center w-[89px] h-[36px] rounded-[6px]  border-gray-300 pt-2 pr-3 pb-2 pl-2 gap-1 text-sm hover:bg-gray-100">
+    <button
+    className="flex items-center w-[89px] h-[36px] rounded-[6px]  border-gray-300 pt-2 pr-3 pb-2 pl-2 gap-1 text-sm hover:bg-gray-100"
+    onClick={() => console.log('Export clicked')}>
         <span className="text-xs"><img src={shape4} className='w-[16px] h-[12px]' /></span>Export</button>
-    <button className="flex items-center w-[84px] h-[36px] rounded-[6px]  border-gray-300 pt-2 pr-3 pb-2 pl-2 gap-1 text-sm hover:bg-gray-100">
+    <button
+    className="flex items-center w-[84px] h-[36px] rounded-[6px]  border-gray-300 pt-2 pr-3 pb-2 pl-2 gap-1 text-sm hover:bg-gray-100"
+    onClick={() => console.log('Share clicked')}>
         <span className="text-xs"><img src={shape6} className='w-[16px] h-[12px]' /></span>Share</button>
-    <button className="flex items-center w-[150px] h-[36px] border-b border-gray-300 bg-[#4B6A4F] text-white pt-[6px] pr-2 pb-[6px] pl-2 gap-2">
+    <button
+    className="flex items-center w-[150px] h-[36px] border-b border-gray-300 bg-[#4B6A4F] text-white pt-[6px] pr-2 pb-[6px] pl-2 gap-2"
+    onClick={() => console.log('New Action clicked')}>
       <img src={arrowSplit4} width="20px" height="20px"/> New Action</button>
   </div>
 </div>
@@ -449,63 +458,88 @@ const columns: Column<RowData>[] = useMemo(() => [
 <div className="flex items-center gap-1 px-[37px] bg-white w-full border border-gray-200 text-sm">
   {/* Label with icon and close */}
   <div className="flex items-center bg-[#E2E2E2] text-gray-700 rounded px-2 flex-grow basis-[30%] max-w-[597px] h-[32.5px]">
-    <span className="mr-1"><img src={link} className='w-[16px] h-[16px]' /></span>
-    <span>Q2 Financial Overview</span>
-    <button className="ml-2  text-xs"><img src={shape8} className='w-[12px] h-[12px]' /></button>
+    <span className="mr-1"><img src={link} className='w-[16px] h-[16px]' /></span>    
+    <button className="ml-2  text-xs flex items-center gap-1" onClick={()=>console.log("Q2 Financial Overview clicked")}><span>Q2 Financial Overview</span><img src={shape8} className='w-[12px] h-[12px]' /></button>
   </div>
 
   {/* Pill Buttons */}
   <button className="px-3 py-1  bg-white-100  font-medium w-[112px]"></button>
-  <button className="flex items-center  px-3 py-1  bg-[#D2E0D4]  font-medium w-[120px] h-[32.5px]"><img src={arrowSplit} className='w-[16px] h-[16px]' /> ABC <img src={iconFrame} className='w-[16px] h-[16px]' /></button>
-  <button className="flex items-center  px-3 py-1  bg-[#DCCFFC]  font-medium w-[235px] h-[32.5px]"><img src={arrowSplit2} className='w-[16px] h-[16px]' /> Answer a question <img src={iconFrame} className='w-[16px] h-[16px]' /></button>
-  <button className="px-2 py-1  bg-[#FAC2AF]  font-medium w-[119px] h-[32.5px]">▲ Extract</button>
+  <button
+  className="flex items-center  px-3 py-1  bg-[#D2E0D4]  gap-1 font-medium w-[120px] h-[32.5px]"
+  onClick={()=>console.log("ABC clicked")}>
+    <img src={arrowSplit} className='w-[16px] h-[16px]' /> ABC <img src={iconFrame} className='w-[16px] h-[16px]' />
+    </button>
+  <button
+  className="flex items-center  px-3 py-1  bg-[#DCCFFC] gap-1 font-medium w-[235px] h-[32.5px]" onClick={()=>console.log("Answer a question clicked")}>
+    <img src={arrowSplit2} className='w-[16px] h-[16px]' /> Answer a question <img src={iconFrame} className='w-[16px] h-[16px]' />
+    </button>
+  <button
+  className="flex items-center px-2 py-1  bg-[#FAC2AF] gap-1 font-medium w-[119px] h-[32.5px]" onClick={()=>console.log("Extract clicked")}>
+    <img src={arrowSplitExtract} className='w-[16px] h-[16px]' /> Extract</button>
 
   {/* Plus Button */}
-  <button className="ml-auto w-6 h-6 flex items-center justify-center  border border-gray-300 text-gray-700 hover:bg-gray-100">
+  <button
+  className="ml-auto w-6 h-6 flex items-center justify-center  border border-gray-300 text-gray-700 hover:bg-gray-100">
     <img src={shape14} className='w-[16px] h-[16px]' />
   </button>
 </div>
 
       <table {...getTableProps()} className="min-w-full border border-gray-300 text-sm">        
         <thead className="sticky top-0 z-10">
-          {headerGroups.map(headerGroup => (
-  <tr {...headerGroup.getHeaderGroupProps()}>
-    {headerGroup.headers.map((column:any) => (
-      <th
-        {...column.getHeaderProps()}
-        className="relative group text-center border flex items-center justify-center border-gray-300 font-semibold"
-      >
-        {column.render('Header')}
-        {/* Resizer handle */}
-        {column.getResizerProps && (
-          <div
-            {...column.getResizerProps()}
-            className="absolute right-0 top-0 h-full w-[4px] bg-gray-400 opacity-0 group-hover:opacity-100 cursor-col-resize"
-          >
-            </div>
-        )}
-      </th>
-    ))}
-  </tr>
-))}
+  {headerGroups.map(headerGroup => {
+    const { key, ...restHeaderGroupProps } = headerGroup.getHeaderGroupProps();
 
-        </thead>
-        <tbody {...getTableBodyProps()} className="bg-white">
-          {rows.map(row => {
-            prepareRow(row);
-            return (
-              <tr {...row.getRowProps()} className="hover:bg-gray-50 h-[42px]">
-                {row.cells.map(cell => (
-                  <td {...cell.getCellProps()} className="px-4 py-2 border border-gray-100 truncate overflow-hidden whitespace-nowrap">
-                    {cell.render('Cell')}
-                  </td>
-                ))}
-              </tr>
-            );
-          })}
+    return (
+      <tr key={key} {...restHeaderGroupProps}>
+        {headerGroup.headers.map((column: any) => {
+          const { key: colKey, ...restColProps } = column.getHeaderProps();
 
+          return (
+            <th
+              key={colKey}
+              {...restColProps}
+              className="relative group text-center border flex items-center justify-center border-gray-300 font-semibold"
+            >
+              {column.render('Header')}
+              {column.getResizerProps && (
+                <div
+                  {...column.getResizerProps()}
+                  className="absolute right-0 top-0 h-full w-[4px] bg-gray-400 opacity-0 group-hover:opacity-100 cursor-col-resize"
+                />
+              )}
+            </th>
+          );
+        })}
+      </tr>
+    );
+  })}
+</thead>
 
-        </tbody>
+<tbody {...getTableBodyProps()} className="bg-white">
+  {rows.map(row => {
+    prepareRow(row);
+    const { key: rowKey, ...restRowProps } = row.getRowProps();
+
+    return (
+      <tr key={rowKey} {...restRowProps} className="hover:bg-gray-50 h-[42px]">
+        {row.cells.map(cell => {
+          const { key: cellKey, ...restCellProps } = cell.getCellProps();
+
+          return (
+            <td
+              key={cellKey}
+              {...restCellProps}
+              className="px-4 py-2 border border-gray-100 truncate overflow-hidden whitespace-nowrap"
+            >
+              {cell.render('Cell')}
+            </td>
+          );
+        })}
+      </tr>
+    );
+  })}
+</tbody>
+
       </table>
       <div className="flex mt-4 border-t border-gray-300 pt-2 px-2">
   {tabs.map(tab => (
